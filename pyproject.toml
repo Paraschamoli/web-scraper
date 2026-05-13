@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "web-scraper-agent"
+version = "1.0.0"
+description = "Single URL web scraper for company information extraction"
+requires-python = ">=3.10"
+dependencies = [
+    "playwright>=1.40.0",
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "pdfplumber>=0.10.0",
+    "requests>=2.31.0",
+    "crawlee[playwright]>=0.4.0",
+    "agno>=2.6.5",
+    "anthropic>=0.101.0",
+    "duckduckgo-search>=8.1.1",
+    "pydantic>=2.13.4",
+    "ddgs>=9.14.2",
+]
+
+[tool.setuptools]
+py-modules = ["scraper", "crawlee_scraper"]
+
+[project.scripts]
+web-scraper = "scraper:main"
+crawlee-scraper = "crawlee_scraper:main"
